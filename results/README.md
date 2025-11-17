@@ -9,6 +9,8 @@ This folder contains **model evaluation outputs**, **diagnostics**, **prediction
 
 ## Folder Structure
 
+
+```bash
 results/
 ├── metrics/
 │   ├── metrics_summary.csv
@@ -34,7 +36,7 @@ results/
 │       ├── rf_shap_dependence_x_runtime.png
 │       ├── rf_shap_summary_bar_top20.png
 │       └── rf_shap_summary_beeswarm.png
-
+```
 
 ---
 

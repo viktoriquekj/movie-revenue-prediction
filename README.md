@@ -34,6 +34,7 @@ For business framing and architecture:
 
 ## Project Structure
 
+```bash
 movie-revenue-prediction/
 ├── src/
 │   └── movie_revenue_prediction/
@@ -71,7 +72,7 @@ movie-revenue-prediction/
 ├── requirements.txt
 ├── pyproject.toml
 └── README.md
-
+```
 
 
 ---
