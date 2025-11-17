@@ -1,0 +1,47 @@
+# =============================================
+# Main environment requirements (training + pipeline)
+# =============================================
+numpy>=1.23
+pandas>=1.5
+matplotlib>=3.7
+seaborn>=0.12
+requests>=2.31
+python-dotenv>=1.0
+tqdm>=4.65
+joblib>=1.3
+scikit-learn>=1.3
+xgboost>=1.7
+scikeras>=0.10
+tensorflow>=2.13
+pyarrow>=12.0
+
+# Jupyter & notebook support
+jupyter>=1.0
+notebook>=7.0
+ipykernel>=6.25
+matplotlib-inline>=0.1
+
+
+# ============================================================
+# OPTIONAL: Shap-only analysis environment (Notebook 03)
+# ============================================================
+# Notebook 03 (SHAP / interpretability analysis) requires a 
+# *separate* environment because SHAP >= 0.50 requires numpy>=2, 
+# which is incompatible with MLflow, TensorFlow 2.13, and XGBoost wheels.
+#
+# To create the SHAP environment, run:
+#
+#     conda create -n movie_shap_env python=3.11
+#     conda activate movie_shap_env
+#     pip install "numpy>=2"
+#     pip install shap>=0.50
+#     pip install scikit-learn>=1.3 pandas>=1.5 matplotlib>=3.7 joblib>=1.3
+#
+# This environment is ONLY for Notebook 03 (EDA + SHAP plots).
+# Do NOT install TensorFlow or XGBoost in this environment.
+#
+# The full pipeline, training, and all production code should use
+# the main environment specified above.
+#
+# ============================================================
+

@@ -1,0 +1,79 @@
+# -------------------------------
+# Python cache & bytecode
+# -------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# -------------------------------
+# Jupyter
+# -------------------------------
+.ipynb_checkpoints/
+
+# -------------------------------
+# Virtual Environments & local env files
+# -------------------------------
+env/
+.venv/
+venv/
+ENV/
+*.conda
+*.mamba
+.env
+
+# -------------------------------
+# Build / packaging artifacts
+# -------------------------------
+build/
+dist/
+*.egg-info/
+
+# -------------------------------
+# Machine Learning Artifacts
+# Keep small JSON manifests, ignore heavy binaries
+# -------------------------------
+artifacts/**/*.pkl
+artifacts/**/*.joblib
+artifacts/**/*.keras
+artifacts/**/*.h5
+artifacts/**/*.hdf5
+artifacts/**/*.model
+artifacts/**/*.parquet
+
+# Allow JSON metadata & manifests inside artifacts
+!artifacts/**/*.json
+
+# -------------------------------
+# Data (local only, not versioned)
+# -------------------------------
+data/raw/
+!data/raw/ids.csv        # <-- KEEP your initial raw dataset
+
+data/curated/
+data/results/            # ignore predictions, metrics, intermediate outputs
+
+# Optionally keep documentation files inside data/
+!data/**/README.md
+!data/**/sample_*.csv
+
+# -------------------------------
+# Logs
+# -------------------------------
+*.log
+logs/
+
+# -------------------------------
+# OS / Editor files
+# -------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.code-workspace
+
+# -------------------------------
+# Allow keeping empty folders with .gitkeep
+# -------------------------------
+!.gitkeep
+

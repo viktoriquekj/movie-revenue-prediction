@@ -1,0 +1,18 @@
+{
+  "model_name": "Ensemble C",
+  "models": [
+    "EN_cyc",
+    "RF_cyc",
+    "XGB_cyc",
+    "NN_SWA_cyc"
+  ],
+  "stacking_order": [
+    "EN",
+    "RF",
+    "XGB",
+    "NN_SWA"
+  ],
+  "feature_set": "cyclical",
+  "n_trainval_samples": 2634,
+  "date": "2025-xx-xx"
+}

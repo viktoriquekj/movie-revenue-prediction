@@ -1,0 +1,8 @@
+{
+  "model_names": [
+    "EN",
+    "RF",
+    "XGB",
+    "NN_SWA"
+  ]
+}
