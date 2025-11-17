@@ -36,6 +36,8 @@ For business framing and architecture:
 
 ```bash
 movie-revenue-prediction/
+├── README.md
+├── README_short.md
 ├── src/
 │   └── movie_revenue_prediction/
 │       ├── api/                 # TMDB client (data collection)
@@ -70,8 +72,7 @@ movie-revenue-prediction/
 ├── docs/                        # Business context, architecture, conclusions
 │
 ├── requirements.txt
-├── pyproject.toml
-└── README.md
+└── pyproject.toml
 ```
 
 

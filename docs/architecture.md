@@ -32,7 +32,7 @@ flowchart TD
     C --> D1[ElasticNet<br/>simple_models.py]
     C --> D2[RandomForest<br/>simple_models.py]
     C --> D3[XGBoost<br/>simple_models.py]
-    C --> D4[Neural Network (MLP + SWA)<br/>nn_model.py]
+    C --> D4["Neural Network (MLP + SWA)<br/>nn_model.py"]
 
     D1 --> E[Out-of-Fold Predictions]
     D2 --> E
