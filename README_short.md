@@ -5,7 +5,7 @@ It demonstrates end-to-end machine learning capability: **data ingestion**, **fe
 
 ## What the project shows
 - Full ML workflow: ingestion → features → modeling → evaluation → deployment  
-- Custom engineered features (historical priors, genre encodings, cyclical date features)  
+- Custom engineered features (historical priors, genre one-hot encodings, cyclical date features)  
 - Multiple models (ElasticNet, RandomForest, XGBoost, Neural Network) combined into a **stacked ensemble**  
 - Strong performance: **~86% variance explained** on the true 2024 hold-out test  
 - Clean, modular, production-style Python package
