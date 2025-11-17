@@ -155,5 +155,4 @@ Visualizations in:
 ## Next Steps
 
 - Publish interactive dashboard (Tableau or Power BI)  
-- Add explainability (e.g., SHAP values)  
 - Automate periodic retraining and model drift monitoring  

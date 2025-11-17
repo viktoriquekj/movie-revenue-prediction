@@ -11,34 +11,34 @@ This folder contains **model evaluation outputs**, **diagnostics**, **prediction
 
 results/
 ├── metrics/
-│ ├── metrics_summary.csv
-│ ├── rmse_by_year.csv
+│   ├── metrics_summary.csv
+│   └── rmse_by_year.csv
 │
 ├── validation_predictions/
-│ ├── oof_predictions.csv
+│   └── oof_predictions.csv
 │
 ├── final_results/
-│ ├── df_2025_predictions.csv
+│   └── df_2025_predictions.csv
 │
 ├── plots/
-│ ├── rmse_by_year.png
-│ ├── predicted_vs_actual_log_test.png
-│ ├── residuals_vs_fitted_log_test.png
-│ ├── residual_distribution_test.png
-│ ├── predicted_distribution_2025_log.png
-│ └── feature_importance/
-│ ├── rf_feature_importance_all.csv
-│ ├── rf_feature_importance_top20.csv
-│ ├── rf_shap_dependence_x_budget_log.png
-│ ├── rf_shap_dependence_x_is_in_collection.png
-│ ├── rf_shap_dependence_x_runtime.png
-│ ├── rf_shap_summary_bar_top20.png
-│ └── rf_shap_summary_beeswarm.png
+│   ├── rmse_by_year.png
+│   ├── predicted_vs_actual_log_test.png
+│   ├── residuals_vs_fitted_log_test.png
+│   ├── residual_distribution_test.png
+│   ├── predicted_distribution_2025_log.png
+│   └── feature_importance/
+│       ├── rf_feature_importance_all.csv
+│       ├── rf_feature_importance_top20.csv
+│       ├── rf_shap_dependence_x_budget_log.png
+│       ├── rf_shap_dependence_x_is_in_collection.png
+│       ├── rf_shap_dependence_x_runtime.png
+│       ├── rf_shap_summary_bar_top20.png
+│       └── rf_shap_summary_beeswarm.png
 
 
 ---
 
-## 📊 Metrics
+## Metrics
 
 ### **`metrics_summary.csv`**
 Overall performance of the final model and baselines, including:
@@ -62,7 +62,7 @@ Use the following for evaluation:
 
 ---
 
-## 🔍 Validation Predictions
+## Validation Predictions
 
 ### **`oof_predictions.csv`**
 Out-of-fold predictions for all observations (train/val/test):
@@ -80,7 +80,7 @@ Useful for:
 
 ---
 
-## 🚀 Final Deployment Output
+## Final Deployment Output
 
 ### **`df_2025_predictions.csv`**
 Predictions for **unreleased or ongoing 2025 movies** using the production Ensemble C model.
@@ -92,7 +92,7 @@ Columns include:
 
 ---
 
-## 📈 Plots
+## Plots
 
 ### **Error & Calibration Diagnostics**
 - `rmse_by_year.png`  
@@ -114,11 +114,11 @@ Located in `plots/feature_importance/`:
   (`rf_feature_importance_all.csv`, `rf_feature_importance_top20.csv`)
 
 > Full explainability pipeline is documented in  
-> 📓 `notebooks/03_shap_feature_analysis.ipynb`
+> `notebooks/03_shap_feature_analysis.ipynb`
 
 ---
 
-## ✔ Recommended Use for Dashboard
+## Recommended Use for Dashboard
 
 | Dashboard Page | Recommended Source Files |
 |----------------|--------------------------|

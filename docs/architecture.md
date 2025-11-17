@@ -18,6 +18,13 @@ flowchart LR
     C --> G[Deployment Pipeline<br/>deployment/pipeline.py]
     F --> G
     G --> H[Predictions for 2025 Movies<br/>data/results_2025/df_2025.csv]
+``` 
+
+
+## 2. Model Training & Ensemble Construction
+
+
+```mermaid
 flowchart TD
     A[Curated Training Data<br/>2017–2024] --> B[Feature Engineering<br/>Time-aware, priors, multi-hot, cyclical]
     B --> C[Chronological CV Splits]
@@ -34,7 +41,13 @@ flowchart TD
 
     E --> F[Meta-learner / Ensemble Model C<br/>ensemble_model.py]
 
-    F --> G[Saved Artifacts<br/>artifacts/ensemble_C]
+    F --> G[Saved Artifacts<br/>artifacts/ensemble_C] 
+```
+
+
+## 3. Deployment / Inference Flow (2025 Movies) 
+
+```mermaid
 flowchart TD
     A[Curated 2025 Data<br/>tmdb_2025.csv] --> B[Load Artifacts<br/>priors, encoders, topK lists, thresholds<br/>artifacts/ensemble_C]
     B --> C[Feature Engineering for 2025<br/>build_features.py + utils/functions.py]
@@ -50,5 +63,6 @@ flowchart TD
     D4 --> E
 
     E --> F[Ensemble Meta-learner<br/>Model C]
-    F --> G[Final Revenue Predictions<br/>data/results_2025/df_2025.csv]
+    F --> G[Final Revenue Predictions<br/>data/results_2025/df_2025.csv] 
+```
 

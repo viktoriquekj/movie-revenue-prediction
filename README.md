@@ -2,9 +2,6 @@
 
 A complete, end-to-end machine learning pipeline that predicts **movie box-office revenue before release** using TMDB metadata, engineered features, and a stacked ensemble model.
 
-Designed following **MaggieInData’s Portfolio Guide** to highlight both  
-**business value**, **engineering rigor**, and **model interpretability**.
-
 **Note:** This project uses the TMDB API but is **not endorsed or certified** by TMDB.
 
 ---
@@ -17,8 +14,7 @@ Studios and streamers rely on early revenue forecasts to drive:
 - Greenlighting and ROI decisions  
 - Slate planning and scenario modeling  
 
-This project builds a **reproducible forecasting system** that predicts  
-**log(revenue)** using pre-release attributes (budget, cast, genres, dates, certifications, etc.).
+This project builds a **reproducible forecasting system** that predicts **log(revenue)** using pre-release attributes (budget, cast, genres, dates, certifications, etc.).
 
 The pipeline includes:
 
@@ -40,41 +36,42 @@ For business framing and architecture:
 
 movie-revenue-prediction/
 ├── src/
-│ └── movie_revenue_prediction/
-│ ├── api/ # TMDB client (data collection)
-│ ├── features/ # Feature engineering, priors, cyclical time features
-│ ├── models/ # ML models, NN, ensemble stacking
-│ ├── utils/ # Paths, metrics, helpers
-│ └── deployment/ # Production prediction pipeline
+│   └── movie_revenue_prediction/
+│       ├── api/                 # TMDB client (data collection)
+│       ├── features/            # Feature engineering, priors, cyclical time features
+│       ├── models/              # ML models, NN, ensemble stacking
+│       ├── utils/               # Paths, metrics, helpers
+│       └── deployment/          # Production prediction pipeline
 │
 ├── notebooks/
-│ ├── 01_exploration_modeling.ipynb
-│ ├── 02_deployment_2025_demo.ipynb
-│ └── 03_shap_feature_analysis.ipynb
+│   ├── 01_exploration_modeling.ipynb
+│   ├── 02_deployment_2025_demo.ipynb
+│   └── 03_shap_feature_analysis.ipynb
 │
 ├── data/
-│ ├── raw/ # Raw TMDB pulls (gitignored)
-│ ├── curated/ # Train/val/test parquet splits (gitignored)
-│ └── results/ # Local intermediates (gitignored)
+│   ├── raw/                     # Raw TMDB pulls (gitignored)
+│   ├── curated/                 # Train/val/test parquet splits (gitignored)
+│   └── results/                 # Local intermediates (gitignored)
 │
 ├── artifacts/
-│ ├── *_best_params.json # Hyperparameters for ElasticNet/RF/XGB/NN
-│ └── ensemble_C/ # Final stacked ensemble artifacts
-│ ├── ensemble_manifest.json
-│ ├── meta_info.json
-│ └── preprocessing/ + base_models/ # Binary weights (gitignored)
+│   ├── *_best_params.json       # Hyperparameter configs for base models
+│   └── ensemble_C/              # Final stacked ensemble artifacts
+│       ├── ensemble_manifest.json
+│       ├── meta_info.json
+│       └── preprocessing/ + base_models/   # Binary weights (gitignored)
 │
 ├── results/
-│ ├── metrics/ # metrics_summary.csv, rmse_by_year.csv
-│ ├── predictions/ # oof_predictions.csv, df_all_predictions.csv
-│ ├── final_results/ # df_2025_predictions.csv
-│ └── plots/ # Evaluation + feature importance
+│   ├── metrics/                 # metrics_summary.csv, rmse_by_year.csv
+│   ├── predictions/             # oof_predictions.csv, df_all_predictions.csv
+│   ├── final_results/           # df_2025_predictions.csv
+│   └── plots/                   # Evaluation + feature importance visuals
 │
-├── docs/ # Business + architecture + conclusions
+├── docs/                        # Business context, architecture, conclusions
 │
 ├── requirements.txt
 ├── pyproject.toml
 └── README.md
+
 
 
 ---
@@ -104,7 +101,8 @@ Feature generation is implemented in:
 - **Stacked Ensemble (Model C)** ← **Final production model**
 
 Artifacts stored in:  
-`artifacts/ensemble_C/`
+`artifacts/ensemble_C/` 
+
 Evaluation metrics stored in:  
 `results/metrics/`
 
@@ -213,7 +211,7 @@ Please refer to TMDB's terms of service for permitted usage.
 
 - Integrate automated retraining
 
-- Deploy inference pipeline on Databricks or AWS
+- Deploy inference pipeline on Databricks
 
 - Add model drift monitoring and expanded interpretability
 
