@@ -135,6 +135,8 @@ The model demonstrates stable performance and limited drift when applied to futu
 
 7. Proper handling of time-dependent splits (avoiding leakage when forecasting future movies).
 
+8. Expanding window CV via TimeSeriesSplit.
+
 ---
 
 ## What Did Not Work (Limitations)
@@ -156,8 +158,6 @@ The model demonstrates stable performance and limited drift when applied to futu
 1. Try alternative data splits
 
     - Random splits might reduce distribution shifts and improve generalization, especially once you ensure no leakage.
-
-    - Consider rolling-window or expanding-window splits.
 
 2. Experiment with more advanced model families
     Examples:
