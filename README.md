@@ -78,7 +78,7 @@ movie-revenue-prediction/
 
 ---
 
-## 🧠 Feature Engineering
+## Feature Engineering
 
 Key engineered features include:
 
