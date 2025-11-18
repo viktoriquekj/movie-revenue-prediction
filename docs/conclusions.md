@@ -119,6 +119,92 @@ The model demonstrates stable performance and limited drift when applied to futu
 
 ---
 
+## Things I Learned from This Project
+
+1. Advanced feature engineering techniques, including winsorization, cyclical time encodings, historical priors, and SHAP for explainability.
+
+2. How to design and structure a fully reproducible ML project, including modular code, deterministic pipelines, and separated training/serving environments.
+
+3. The importance of strong baselines — linear and ensemble models often outperform neural networks when datasets are relatively small or noisy.
+
+4. The power of ensembling — combining multiple simple models can outperform any single model.
+
+5. How to work with the TMDB API, including rate-limiting, schema inconsistencies, and data cleaning challenges.
+
+6. The impact of data quality — messy metadata (inconsistent genres, missing runtime, etc.) creates more modeling challenges than model choice.
+
+7. Proper handling of time-dependent splits (avoiding leakage when forecasting future movies).
+
+---
+
+## What Did Not Work (Limitations)
+
+1. Expanding the dataset and applying winsorization — the capped revenue values caused the model to underestimate blockbuster-level outcomes.
+
+2. Mixing models trained on different feature sets (cyclical vs base) — increased the pipeline complexity without improving accuracy.
+
+3. Neural networks with limited data — the model overfitted easily and required SWA and heavy regularization, delivering no gains over simpler models.
+
+4. High-cardinality features (keywords/genres/companies) — even with top-K filtering, sparse multi-hot vectors added noise more than signal.
+
+5. Director and cast popularity priors worked reasonably but were too sparse for many titles.
+
+---
+
+## Possible Improvements (Future Work)
+
+1. Try alternative data splits
+
+    - Random splits might reduce distribution shifts and improve generalization, especially once you ensure no leakage.
+
+    - Consider rolling-window or expanding-window splits.
+
+2. Experiment with more advanced model families
+    Examples:
+
+    - LightGBM
+
+    - CatBoost (handles categorical features extremely well)
+
+    - TabNet or FT-Transformers (NNs designed for tabular data)
+
+3. Engineer richer features, such as:
+
+    - Similarity-based features: embeddings of plot descriptions.
+
+    - Temporal trend features: popularity momentum or historical revenue growth patterns.
+
+    - Network-based features: director–actor collaboration graphs.
+
+    - Genre overlap scores or keyword clustering using NLP.
+
+    - Market inflation factors on revenue and budget.
+
+4. Use SHAP more deeply
+
+    - Calculate interaction SHAP values.
+
+    - Compare feature importance across individual model families.
+
+    - Identify systematic bias (e.g., underprediction for certain genres).
+
+5. Improve blockbuster handling
+
+    - Model tail behavior explicitly (e.g., mixture models or quantile regression).
+
+    - Separate “blockbusters” vs “mid-budget films” into distinct models.
+
+6. Improve deployment realism
+
+    - Add validation schemas for TMDB fields.
+
+    - Build a small UI or API endpoint for predictions.
+
+    - Automate weekly retraining using airflow or dagster.
+
+---
+
+
 ## Overall Conclusion
 
 The Ensemble C model is:
